@@ -55,7 +55,7 @@ app.get("/seed-my-database", wrapAsync(async (req, res) => {
             price: 800,
             location: "Mumbai",
             country: "India",
-            image: { url: "https://unsplash.com" }
+            image: { url: "https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8" }
         },
         {
             title: "Beachfront Paradise",
@@ -63,7 +63,7 @@ app.get("/seed-my-database", wrapAsync(async (req, res) => {
             price: 2000,
             location: "Goa",
             country: "India",
-            image: { url: "https://unsplash.com" }
+            image: { url: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e" }
         },
         {
             title: "Rustic Cabin by the Lake",
@@ -71,7 +71,7 @@ app.get("/seed-my-database", wrapAsync(async (req, res) => {
             price: 900,
             location: "Manali",
             country: "India",
-            image: { url: "https://unsplash.com" }
+            image: { url: "https://images.unsplash.com/photo-1501785888041-af3ef285b470" }
         }
     ];
     
