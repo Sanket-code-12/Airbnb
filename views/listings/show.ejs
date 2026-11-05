@@ -1,0 +1,39 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    
+    <!-- 
+    <ul>
+        <li><%= listing.title %></li>
+        <li><%= listing.description %></li>
+        <li> &#8377; <%= listing.price.toLocaleString("en-IN") %></li>
+        <li><%= listing.country %></li>
+        <li><%= listing.location %></li>
+    </ul>
+
+    <a href="/listings/<%= listing._id %>/edit">Edit this Listng</a>
+    <br><br>
+    <form action="/listings/<%= listing._id %>?_method=DELETE" method="post">
+        <button>Delet This Listing</button>
+    </form> -->
+
+    
+    <div class="show-card offset-2">
+        <h3>Listing Details</h3>
+        <img src="<%= listing.image.url %>" class="show-card-img-top" alt="listing_image">
+        <div class="card-body">
+            <br>
+            <h5 class="card-title"><b><%= listing.title %></b></h5>
+            <%= listing.description %><br>
+            ₹ <%= (listing.price || 0).toLocaleString("en-IN") %><br>
+            <%= listing.country %><br>
+            <%= listing.location %><br><br>
+            <div class="d-flex gap-3">
+                <a href="/listings/<%= listing._id %>/edit" class="btn btn-dark">Edit</a>
+                <form action="/listings/<%= listing._id %>?_method=DELETE" method="post">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>

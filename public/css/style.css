@@ -1,0 +1,83 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.container {
+    flex: 1;
+}
+.navbar{
+    height: 5rem;
+    background-color: white;
+}
+.bi-compass{
+    color: #f9424d;
+    font-size: 2rem;
+}
+.navbar .nav-link {
+    color: #351e20 !important;
+}
+
+.f-info-links a{
+    text-decoration: none;
+    color: #222222;
+}
+
+.f-info-links a:hover{
+    text-decoration: underline;
+}
+
+.f-info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    background-color: #ebebeb;
+    
+}
+
+.f-info-socials i{
+    font-size: 1.2rem;
+    margin-right: 1rem;
+}
+
+.card-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.card{
+    width: 21.5rem;
+    border: none !important;
+    overflow: hidden;
+    border-radius: 50px;
+}
+
+.card-img-top{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 20px !important;
+}
+
+.listing-link {
+    text-decoration: none;
+}
+.card-img-top:hover{
+    opacity: 0.7;
+}
+
+.show-card-img-top{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px !important;
+}
+.show-card{
+    width: 40rem;
+    border: none !important;
+    overflow: hidden;
+}
