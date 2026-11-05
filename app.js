@@ -138,8 +138,8 @@ app.delete("/listings/:id", wrapAsync(async (req, res) => {
     res.redirect("/listings");
 }));
 
-// Page Not Found Catch-All Route Interceptor
-app.all("*", (req, res, next) => {
+// Page Not Found Catch-All Route
+app.use((req, res, next) => {
     next(new ExpressError(404, "Page Not Found"));
 });
 
