@@ -60,6 +60,19 @@ app.get("/listings", wrapAsync(async (req, res) => {
     res.render("listings/index.ejs", { allListings });
 }));
 
+// TEMPORARY SEED ROUTE (Delete after database is populated)
+const initData = require("./init/data.js");
+app.get("/seed-my-database", wrapAsync(async (req, res) => {
+    // Delete any old empty collections
+    await Listing.deleteMany({});
+    
+    // Insert your listings array from data.js
+    await Listing.insertMany(initData.data);
+    
+    console.log("Database initialized successfully from the cloud route!");
+    res.send("<h1>Database successfully populated with listings! You can close this tab now.</h1>");
+}));
+
 
 // New Rout
 app.get("/listings/new", wrapAsync(async (req,res)=>{
