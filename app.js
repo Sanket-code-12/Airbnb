@@ -8,14 +8,38 @@ const ejsMate = require("ejs-mate");
 const wrapAsync = require("./utils/wrapAsync.js");
 const ExpressError = require("./utils/ExpressError.js");
 
-main().then(()=>{
+// 🟢 PASTE THE NEW CODE RIGHT HERE (REPLACING YOUR OLD CALL):
+const PORT = process.env.PORT || 8080;
+const dbUrl = process.env.ATLAS_URL || "mongodb://127.0.0.1:27017/wanderLust";    
+
+main()
+  .then(() => {
     console.log("Connected to DB");
-}).catch((err)=>{
+    app.listen(PORT, () => {
+        console.log(`Server is listening on port ${PORT}`);
+    });
+  })
+  .catch((err) => {
     console.log(err);
-})
+  });
+
+// 🔴 DELETE or REPLACE your old lines that looked like this:
+// main().then(()=>{
+//     console.log("Connected to DB");
+// }).catch((err)=>{
+//     console.log(err);
+// })
+
+
+// CHANGE THIS:
+// async function main() {
+//     await mongoose.connect("mongodb://127.0.0.1:27017/wanderLust");    
+// }
+// TO THIS:
 async function main() {
-    await mongoose.connect("mongodb://127.0.0.1:27017/wanderLust");    
+    await mongoose.connect(dbUrl);    
 }
+
 
 app.set("view engine","ejs");
 app.set("views", path.join(__dirname, "views"));
@@ -128,6 +152,6 @@ app.use((err,req,res,next)=>{
     res.status(statusCode).render("listings/error.ejs",{message});
 });
 
-app.listen(8080,()=>{
-    console.log("server is listenig port 8080");
-})
+// app.listen(8080,()=>{
+//     console.log("server is listenig port 8080");
+// })
